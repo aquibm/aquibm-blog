@@ -1,7 +1,8 @@
 import React from 'react'
-import { RouteHandler, Link } from 'react-router'
+import { Link } from 'react-router'
 import { prefixLink } from 'gatsby-helpers'
 import { config } from 'config'
+
 import SiteNav from '../SiteNav'
 import SiteLinks from '../SiteLinks'
 
@@ -9,45 +10,37 @@ import './style.css'
 import profilePic from '../../pages/photo.jpg'
 
 class SiteSidebar extends React.Component {
+	renderHeader() {
+		return (
+			<header>
+				<Link to={prefixLink('/')} className="sidebar__siderbar-inner__blog-details__header__link">
+					<img src={prefixLink(profilePic)} alt="Aquib Master - Profile Picture" width="75" height="75"/>
+				</Link>
+
+				<h2><Link to={prefixLink('/')}>{ config.siteAuthor }</Link></h2>
+
+				<p>
+					{ config.siteDescr }
+				</p>
+			</header>
+		);
+	}
+
     render() {
-        const {location, children} = this.props
-        const isHome = location.pathname === prefixLink('/')
-
-        let header = (
-        <header>
-          <Link style={ {    textDecoration: 'none',    borderBottom: 'none',    outline: 'none'} } to={ prefixLink('/') }>
-          <img src={prefixLink(profilePic)} width='75' height='75' />
-          </Link>
-          { isHome ? (
-            <h1><Link style={ {    textDecoration: 'none',    borderBottom: 'none',    color: 'inherit'} } to={ prefixLink('/') }> { config.siteAuthor } </Link></h1>
-            ) :
-            <h2><Link style={ {    textDecoration: 'none',    borderBottom: 'none',    color: 'inherit'} } to={ prefixLink('/') }> { config.siteAuthor } </Link></h2> }
-          <p>
-            { config.siteDescr }
-          </p>
-        </header>
-        )
-
         return (
-            <div className='sidebar'>
-              <div className='sidebar-inner'>
-                <div className='blog-details'>
-                  <header>
-                    { header }
-                  </header>
-                </div>
-                <div className='blog-options'>
-                  <SiteNav {...this.props}/>
-                  <footer>
-                    <SiteLinks {...this.props}/>
-                    <p className='copyright'>
-                      &copy; All rights reserved.
-                    </p>
-                  </footer>
-                </div>
-              </div>
-            </div>
-            );
+        	<div className="sidebar">
+        		<div className="sidebar-inner">
+        			<div className="blog-details">
+        				{ this.renderHeader() }
+        			</div>
+
+        			<div className="blog-options">
+        				<SiteNav {...this.props} />
+        				<SiteLinks {...this.props} />
+        			</div>
+        		</div>
+        	</div>
+        );
     }
 }
 
