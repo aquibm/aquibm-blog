@@ -11,12 +11,12 @@ exports.modifyWebpackConfig = function(config, env) {
                 browsers: ['>1%', 'last 2 versions']
             })
         ]
-    })
+    });
 
     config.loader('svg', {
-       test: /\.(svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-       loader: 'file-loader',
-    })
+        test: /\.(svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'file-loader',
+    });
 
     return config
 };
