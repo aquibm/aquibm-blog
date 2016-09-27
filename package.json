@@ -6,12 +6,11 @@
   "scripts": {
     "develop": "gatsby develop",
     "build": "npm run clean & gatsby build & copy",
-    "clean:public": "rm -rf public",
+    "clean:public": "rimraf public",
     "clean": "npm run clean:public",
     "copy:files": "cp pages/*.{pdf,txt,png,jpg,jpeg,gif} public/",
     "copy": "npm run copy:files",
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "gatsby build --prefix-links && gh-pages -d public"
   },
   "keywords": [
