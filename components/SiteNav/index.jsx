@@ -1,34 +1,45 @@
-import React from 'react'
-import { RouteHandler, Link } from 'react-router'
+import React, { PropTypes } from 'react'
+import { Link } from 'react-router'
 import { prefixLink } from 'gatsby-helpers'
+
 import './style.css'
 
 class SiteNav extends React.Component {
-    render() {
-        const {location} = this.props
-        return (
-            <nav className='blog-nav'>
-              <ul>
-                <li>
-                  <Link to="/" className={ location.pathname === prefixLink('/') ? "current" : null }> Articles
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/about/" className={ location.pathname === prefixLink('/about/') ? "current" : null }> About me
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/contact/" className={ location.pathname === prefixLink('/contact/') ? "current" : null }> Contact me
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-            );
-    }
+	getHighlightClass(path) {
+		return this.props.location.pathname === prefixLink(path) ? 'current' : '';
+	}
+
+	renderLinks() {
+		const links = [
+			{name: 'Home', route: '/'},
+			{name: 'About', route: '/about/'},
+			{name: 'Contact', route: '/contact/'}
+		];
+
+		return (
+			<ul>
+				{links.map((link, i) => {
+					return (
+						<li>
+							<Link to={link.route} className={this.getHighlightClass(link.route)}>{link.name}</Link>
+						</li>
+					);
+				})}
+			</ul>
+		);
+	}
+
+	render() {
+		return (
+			<nav className="blog-nav">
+				{ this.renderLinks() }
+			</nav>
+		);
+	}
 }
 
 SiteNav.propTypes = {
-    location: React.PropTypes.object,
-}
+	location: PropTypes.object.isRequired
+};
 
-export default SiteNav
+export default SiteNav;
