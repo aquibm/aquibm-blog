@@ -3,10 +3,8 @@ siteDescr = "Frontend developer from Auckland, New Zealand."
 siteAuthor = "Aquib Master"
 
 siteTelegramUrl = "https://telegram.me/aquibm"
-siteTwitterUrl = "#"
 siteGithubUrl = "https://github.com/aquibm/"
 siteEmailUrl = "mailto://aquibmaster@gmail.com"
 siteRssUrl = "#"
-siteVkUrl = "#"
 
 linkPrefix = "/"

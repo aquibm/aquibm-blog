@@ -36,7 +36,7 @@ class SiteSidebar extends React.Component {
 
         			<div className="blog-options">
         				<SiteNav {...this.props} />
-        				<SiteLinks {...this.props} />
+        				<SiteLinks />
         			</div>
         		</div>
         	</div>
