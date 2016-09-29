@@ -45,8 +45,7 @@ class SiteSidebar extends React.Component {
 }
 
 SiteSidebar.propTypes = {
-    children: React.PropTypes.any,
-    location: React.PropTypes.object,
+    location: React.PropTypes.object.isRequired
 }
 
 export default SiteSidebar
