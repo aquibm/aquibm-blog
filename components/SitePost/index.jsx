@@ -17,7 +17,6 @@ const SitePost = ({ route }) => {
 					<h1>{post.title}</h1>
 
 					<div dangerouslySetInnerHTML={{__html: post.body}} />
-
 				</div>
 
 				<div className="footer">
