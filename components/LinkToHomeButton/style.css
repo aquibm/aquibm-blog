@@ -1,0 +1,33 @@
+.go-home {
+	position: fixed;
+	left: 20px;
+	font-size: 16px;
+	text-align: center;
+	padding: 8px 16px;
+	color: #999;
+	background: #f4f4f4;
+	font-weight: 400;
+	border-radius: 3px;
+}
+
+.go-home:focus {
+	color: #444;
+	background: #f4f4f4;
+	border: 0;
+}
+
+.go-home:hover {
+	color: #444;
+	background: #f4f4f4;
+	border: 0;
+}
+
+@media (max-width:900px) {
+	.go-home {
+		position: static;
+		margin: 20px auto 0;
+		text-align: center;
+		width: 85px;
+		display: block;
+	}
+}
