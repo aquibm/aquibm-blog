@@ -1,9 +1,6 @@
 import React, { PropTypes } from 'react'
-import { Link } from 'react-router'
 import sortBy from 'lodash/sortBy'
-import moment from 'moment'
 import DocumentTitle from 'react-document-title'
-import { prefixLink } from 'gatsby-helpers'
 import access from 'safe-access'
 
 import { config } from 'config'
