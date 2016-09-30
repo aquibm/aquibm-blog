@@ -9,7 +9,7 @@ const SiteLinks = () => {
 		<div className="blog-social">
 			<ul>
 				<li>
-					<a href={ config.siteGithubUrl } target="_blank"><i className="fa fa-twitter"></i></a>
+					<a href={ config.siteGithubUrl } target="_blank"><i className="fa fa-github"></i></a>
 				</li>
 
 				<li>
