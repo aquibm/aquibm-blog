@@ -20,7 +20,7 @@ class SiteNav extends React.Component {
 			<ul>
 				{links.map((link, i) => {
 					return (
-						<li>
+						<li key={i}>
 							<Link to={link.route} className={this.getHighlightClass(link.route)}>{link.name}</Link>
 						</li>
 					);
