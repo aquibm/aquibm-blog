@@ -41,6 +41,14 @@
 	color: #5d93ff;
 }
 
+.blog-single a {
+	color: #5d93ff;
+}
+
+.blog-single a:hover {
+	border-bottom: 1px solid;
+}
+
 .blog-post .readmore:hover {
 	border-bottom: 1px solid;
 }
