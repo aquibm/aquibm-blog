@@ -10,7 +10,7 @@
     "copy": "cp pages/*.{pdf,txt,png,jpg,jpeg,gif} public/",
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "deploy": "gatsby build --prefix-links && gh-pages -d public",
-    "build:site": "gatsby build",
+    "build:site": "gatsby build --prefix-links",
     "build:rss": "babel-node ./tools/rss.js"
   },
   "keywords": [

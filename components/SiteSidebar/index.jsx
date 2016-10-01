@@ -14,7 +14,7 @@ class SiteSidebar extends React.Component {
 		return (
 			<header>
 				<Link to={prefixLink('/')} className="sidebar__siderbar-inner__blog-details__header__link">
-					<img src={prefixLink(profilePic)} alt="Aquib Master - Profile Picture" width="75" height="75"/>
+					<img src={'/' + prefixLink(profilePic)} alt="Aquib Master - Profile Picture" width="75" height="75"/>
 				</Link>
 
 				<h2><Link to={prefixLink('/')}>{ config.siteAuthor }</Link></h2>
