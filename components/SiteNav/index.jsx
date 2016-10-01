@@ -12,8 +12,7 @@ class SiteNav extends React.Component {
 	renderLinks() {
 		const links = [
 			{name: 'Home', route: '/'},
-			{name: 'About', route: '/about/'},
-			{name: 'Contact', route: '/contact/'}
+			{name: 'About', route: '/about/'}
 		];
 
 		return (
